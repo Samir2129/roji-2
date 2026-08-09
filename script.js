@@ -15,8 +15,8 @@ const BIRTHDAY_TIME = new Date(
     2026,
     7,
     09,
-    01,
-    05,
+    13,
+    15,
     0,
     0
 ).getTime();
