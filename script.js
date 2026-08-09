@@ -347,115 +347,24 @@ if (messageEl) {
    MUSIC
 ========================================== */
 
-let playing = false;
+let musicStarted = false;
 
-
-async function playMusic() {
-
-    if (!music) {
-        return;
-    }
-
+async function startMusic() {
+    if (!music || musicStarted) return;
 
     try {
-
         await music.play();
-
-        playing = true;
-
+        musicStarted = true;
 
         if (musicBtn) {
-
-            musicBtn.textContent =
-                "⏸ Pause Music";
-
+            musicBtn.textContent = "⏸ Pause Music";
         }
 
+        console.log("🎵 Birthday music started!");
     } catch (error) {
-
-        playing = false;
-
-        if (musicBtn) {
-
-            musicBtn.textContent =
-                "🎵 Play Music";
-
-        }
-
+        console.log("Music could not start:", error);
     }
-
 }
-
-
-function pauseMusic() {
-
-    if (!music) {
-        return;
-    }
-
-
-    music.pause();
-
-    playing = false;
-
-
-    if (musicBtn) {
-
-        musicBtn.textContent =
-            "🎵 Play Music";
-
-    }
-
-}
-
-
-if (musicBtn && music) {
-
-    musicBtn.addEventListener(
-        "click",
-        async () => {
-
-            if (music.paused) {
-
-                await playMusic();
-
-            } else {
-
-                pauseMusic();
-
-            }
-
-        }
-    );
-
-
-    music.addEventListener(
-        "play",
-        () => {
-
-            playing = true;
-
-            musicBtn.textContent =
-                "⏸ Pause Music";
-
-        }
-    );
-
-
-    music.addEventListener(
-        "pause",
-        () => {
-
-            playing = false;
-
-            musicBtn.textContent =
-                "🎵 Play Music";
-
-        }
-    );
-
-}
-
 
 /* ==========================================
    WISH BUTTON
