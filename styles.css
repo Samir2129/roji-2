@@ -667,34 +667,47 @@ button.unlocked {
 ========================================== */
 
 .cake-section {
+
     padding: 120px 20px;
 }
 
+
 .cake-section h2 {
+
     font-size: 42px;
+
     margin-bottom: 40px;
+
     color: #ffd2ff;
 }
 
+
 .cake {
+
     width: 220px;
     height: 140px;
+
     margin: 0 auto;
+
     position: relative;
 
-    background: linear-gradient(
-        #ff91d9,
-        #ff67c7
-    );
+    background:
+        linear-gradient(
+            #ff91d9,
+            #ff67c7
+        );
 
-    border-radius: 15px 15px 25px 25px;
+    border-radius:
+        15px 15px 25px 25px;
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.4);
+        0 10px 30px
+        rgba(0, 0, 0, 0.4);
 }
 
-/* Cream layer */
+
 .cake::before {
+
     content: "";
 
     position: absolute;
@@ -710,8 +723,9 @@ button.unlocked {
     border-radius: 20px;
 }
 
-/* Middle cream layer */
+
 .cake::after {
+
     content: "";
 
     position: absolute;
@@ -724,8 +738,9 @@ button.unlocked {
     background: #ffc6f1;
 }
 
-/* Candle */
+
 .candle {
+
     position: absolute;
 
     width: 14px;
@@ -736,15 +751,15 @@ button.unlocked {
     left: 50%;
     top: -60px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     border-radius: 5px;
-
-    z-index: 5;
 }
 
-/* Flame */
+
 .flame {
+
     position: absolute;
 
     width: 18px;
@@ -753,39 +768,43 @@ button.unlocked {
     background: gold;
 
     left: 50%;
+    top: -28px;
 
-    /* FIXED POSITION */
-    top: -88px;
+    transform:
+        translateX(-50%);
 
-    transform: translateX(-50%);
-
-    border-radius: 50% 50% 50% 50%;
+    border-radius:
+        50% 50% 50% 50%;
 
     box-shadow:
         0 0 15px gold,
-        0 0 30px orange,
-        0 0 45px #ff69b4;
+        0 0 30px orange;
 
-    animation: flicker 0.5s infinite alternate;
-
-    z-index: 10;
+    animation:
+        flicker 0.5s
+        infinite alternate;
 }
+
 
 @keyframes flicker {
 
     from {
+
         transform:
             translateX(-50%)
             scale(1);
+
     }
 
     to {
+
         transform:
             translateX(-50%)
             scale(1.15);
-    }
-}
 
+    }
+
+}
 
 /* ==========================================
    GALLERY
@@ -919,9 +938,9 @@ button.unlocked {
 
 .letter-card p {
 
-    font-size: 21px;
+    font-size: 16px;
 
-    line-height: 2;
+    line-height: 1.5;
 
     color: #fff;
 
