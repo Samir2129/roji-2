@@ -175,7 +175,7 @@ function lockSurprise() {
     openGift.disabled = true;
 
     openGift.textContent =
-        "🎁 Surprise Unlocks on 29/08/2026";
+        "🎁 Surprise Unlocks on 29/08/2027";
 
 }
 
@@ -1368,5 +1368,5 @@ if (
 
 
 console.log(
-    "🎉 Birthday Website Ready!"
+    "🎉 Birthday Website Ready"
 );
