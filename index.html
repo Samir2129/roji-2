@@ -16,7 +16,175 @@
         rel="stylesheet"
     >
 </head>
+<script>
+/* =========================================================
+   DAILY NOTES SYSTEM
+   ========================================================= */
 
+const dailyNotes = {
+
+    "2026-09-09":
+        "ke life beautiful simply by being in it. You are one of those people. ",
+
+    "2026-09-10":
+        "No matter how ordinary today feels, remember that you are someone's favourite person. 💕",
+
+    "2026-09-11":
+        "I hope today gives you at least one reason to smile and a hundred reasons to keep smiling. ✨",
+
+    "2026-09-12":
+        "You deserve happiness that feels peaceful, genuine and endless. 🌸",
+
+    "2026-09-13":
+        "If today gets difficult, remember how many beautiful moments are still waiting for you. 💜",
+
+    "2026-09-14":
+        "You don't have to be perfect to be special. Just being you is enough. ❤️",
+
+    "2026-09-15":
+        "Some memories become precious because of the person we share them with. 💫",
+
+    "2026-09-16":
+        "I hope your day is as beautiful as the smile you bring to other people's lives. 🌷",
+
+    "2026-09-17":
+        "Take a little time today to appreciate yourself. You have come further than you think. 💖",
+
+    "2026-09-18":
+        "Whatever happens today, don't forget that someone out there is wishing you happiness. 🌙",
+
+    "2026-09-19":
+        "Life becomes a little brighter when you choose to smile through the little things. ✨",
+
+    "2026-09-20":
+        "You are more loved, more important and more special than you sometimes realize. ❤️",
+
+    "2026-09-21":
+        "Another day, another little reason to be grateful that you exist. 💕",
+
+    "2026-09-22":
+        "Keep your heart soft, your dreams big and your smile beautiful. 🌸",
+
+    "2026-09-23":
+        "I hope something unexpectedly beautiful happens to you today. 💜",
+
+    "2026-09-24":
+        "You deserve moments that make you stop and think, 'I'm really happy right now.' ✨",
+
+    "2026-09-25":
+        "Never underestimate the happiness your presence can bring to someone. ❤️",
+
+    "2026-09-26":
+        "Today is another page in your story. Make it a beautiful one. 📖💕",
+
+    "2026-09-27":
+        "Somewhere between yesterday and tomorrow is this beautiful little moment called today. Enjoy it. 🌙",
+
+    "2026-09-28":
+        "Keep going. Better days, beautiful memories and unexpected happiness are waiting for you. 💖",
+
+    "2026-09-29":
+        "You have a beautiful heart. Never let the world convince you otherwise. 🌷",
+
+    "2026-09-30":
+        "Before this day ends, remember one thing: you are incredibly special. ❤️"
+};
+
+
+/* ---------- Get Today's Date ---------- */
+
+function getTodayKey() {
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+
+    const month = String(
+        today.getMonth() + 1
+    ).padStart(2, "0");
+
+    const day = String(
+        today.getDate()
+    ).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+}
+
+
+/* ---------- Format Date ---------- */
+
+function getPrettyDate() {
+
+    const today = new Date();
+
+    return today.toLocaleDateString(
+        "en-IN",
+        {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        }
+    );
+}
+
+
+/* ---------- Display Today's Note ---------- */
+
+function showDailyNote() {
+
+    const noteElement =
+        document.getElementById("dailyNoteText");
+
+    const dateElement =
+        document.getElementById("noteDate");
+
+    if (!noteElement || !dateElement) {
+        return;
+    }
+
+    const todayKey = getTodayKey();
+
+    const note =
+        dailyNotes[todayKey];
+
+    dateElement.textContent =
+        getPrettyDate();
+
+
+    if (note) {
+
+        noteElement.style.opacity = "0";
+        noteElement.style.transform =
+            "translateY(10px)";
+
+        setTimeout(() => {
+
+            noteElement.textContent = note;
+
+            noteElement.style.opacity = "1";
+            noteElement.style.transform =
+                "translateY(0)";
+
+        }, 300);
+
+    } else {
+
+        noteElement.textContent =
+            "A beautiful little message is waiting for you... ❤️";
+
+    }
+}
+
+
+/* ---------- Start ---------- */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    showDailyNote
+);
+
+</script>
 <body class="countdown-page">
 
     <!-- Loader -->
@@ -66,7 +234,40 @@
             </div>
 
         </section>
+<!-- ================= DAILY NOTE SECTION ================= -->
+<section class="daily-note-section" id="daily-note">
 
+    <div class="note-heading">
+        <span class="note-small-title">A little message for you</span>
+        <h2>💌 Today's Note</h2>
+        <p>Because every day deserves a special message.</p>
+    </div>
+
+    <div class="daily-note-card">
+
+        <div class="note-decoration note-heart-1">♥</div>
+        <div class="note-decoration note-heart-2">♥</div>
+
+        <div class="note-top">
+            <span class="note-icon">💖</span>
+            <span id="noteDate">Today</span>
+        </div>
+
+        <div class="note-content">
+            <p id="dailyNoteText">
+                Loading your special note...
+            </p>
+        </div>
+
+        <div class="note-bottom">
+            <span>Made with love</span>
+            <span>♥</span>
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= END DAILY NOTE SECTION ================= -->
 
         <!-- Hero -->
         <section class="hero">
