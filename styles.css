@@ -19,11 +19,11 @@ body {
 
     /* Premium dark birthday theme */
     background:
-        radial-gradient(
-            circle at 50% 0%,
-            #35105f 0%,
-            #1b0b35 35%,
-            #0b061b 70%,
+       radial-gradient(
+            circle at 90% 0%,
+            #35105f 20%,
+            #1b0b35 55%,
+            #0b061b 65%,
             #05030d 100%
         );
 
