@@ -16,14 +16,17 @@ html {
 body {
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
+
+    /* Premium dark birthday theme */
     background:
-        linear-gradient(
-            180deg,
-            #050018,
-            #14042e,
-            #23053d,
-            #33064f
+        radial-gradient(
+            circle at 50% 0%,
+            #35105f 0%,
+            #1b0b35 35%,
+            #0b061b 70%,
+            #05030d 100%
         );
+
     color: #fff;
     min-height: 100vh;
 }
